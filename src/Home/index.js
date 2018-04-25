@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Container } from 'semantic-ui-react';
 
 class Home extends Component {
   render() {
     return (
-      <div style={this.props.style}>
+      <Container style={this.props.style}>
           <p>I am Home</p>
-      </div>
+      </Container>
     );
   }
 }

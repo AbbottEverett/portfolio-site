@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { Menu, Segment } from 'semantic-ui-react'
 import About from './About';
 import Contact from './Contact';
@@ -9,24 +9,38 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const views = [
-      { key: 'Home', name: 'Home' },
-      { key: 'About', name: 'About' },
-      { key: 'Contact', name: 'Contact' },
-      { key: 'Portfolio', name: 'Portfolio' },
-    ];
-
     const contentStyles = {
       marginTop: '5em'
     };
     return (
         <Router>
           <div>
-            <Menu fluid fixed='top' items={views} />
+            <Menu fluid inverted fixed='top'>
+              <Link to="/">
+                <Menu.Item>
+                  Home
+                </Menu.Item>
+              </Link>
+              <Link to="/about">
+                <Menu.Item>
+                  About
+                </Menu.Item>
+              </Link>
+              <Link to="/portfolio">
+                <Menu.Item>
+                  Portfolio
+                </Menu.Item>
+              </Link>
+              <Link to="/contact">
+                <Menu.Item>
+                  Contact
+                </Menu.Item>
+              </Link>
+            </Menu>
             <Switch>
               <Route path="/about" render={() => <About style={contentStyles}/>} /> 
-              <Route path="/contact" render={() => <Contact style={contentStyles}/>} /> 
-              <Route path="/portfolio" render={() => <Portfolio style={contentStyles}/>} /> 
+              <Route path="/portfolio" render={() => <Portfolio style={contentStyles}/>} />
+              <Route path="/contact" render={() => <Contact style={contentStyles}/>} />  
               <Route path="/" render={() => <Home style={contentStyles}/>} /> 
             </Switch>
 
