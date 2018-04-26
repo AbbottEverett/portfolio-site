@@ -6,7 +6,7 @@ class About extends Component {
   render() {
     return (
       <Container style={this.props.style}>
-          <Card>
+          <Card style={{ marginTop: '13em'}}>
             <Image src={Everett} />
             <Card.Content>
               <Card.Header>
