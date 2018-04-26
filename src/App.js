@@ -9,11 +9,18 @@ import BG from './assets/bg.jpg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    activeItem: 'home'
+  }
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+
   render() {
     const contentStyles = {
       marginTop: '5em',
       minHeight: '85vh'
     };
+    const { activeItem } = this.state;
     return (
         <Router>
           <div>
@@ -22,24 +29,36 @@ class App extends Component {
             </div>
 
             
-            <Menu fluid inverted fixed='top'>
+            <Menu stackable fluid inverted fixed='top'>
               <Link to="/">
-                <Menu.Item>
+                <Menu.Item 
+                  name='home'
+                  active={ activeItem === 'home' } 
+                  onClick={this.handleItemClick}>
                   Home
                 </Menu.Item>
               </Link>
               <Link to="/about">
-                <Menu.Item>
+                <Menu.Item
+                  name='about'
+                  active={activeItem === 'about'} 
+                  onClick={this.handleItemClick}>
                   About
                 </Menu.Item>
               </Link>
               <Link to="/portfolio">
-                <Menu.Item>
+                <Menu.Item
+                  name='portfolio'
+                  active={activeItem === 'portfolio'} 
+                  onClick={this.handleItemClick}>
                   Portfolio
                 </Menu.Item>
               </Link>
               <Link to="/contact">
-                <Menu.Item>
+                <Menu.Item
+                  name='contact'
+                  active={activeItem === 'contact'} 
+                  onClick={this.handleItemClick}>
                   Contact
                 </Menu.Item>
               </Link>
