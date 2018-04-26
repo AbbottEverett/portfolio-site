@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <Container style={this.props.style}>
-          <p>I am Home</p>
+
       </Container>
     );
   }

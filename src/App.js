@@ -5,16 +5,23 @@ import About from './About';
 import Contact from './Contact';
 import Portfolio from './Portfolio';
 import Home from './Home';
+import BG from './assets/bg.jpg';
 import './App.css';
 
 class App extends Component {
   render() {
     const contentStyles = {
-      marginTop: '5em'
+      marginTop: '5em',
+      minHeight: '85vh'
     };
     return (
         <Router>
           <div>
+            <div id="bg">
+              <img src={BG} alt="" />
+            </div>
+
+            
             <Menu fluid inverted fixed='top'>
               <Link to="/">
                 <Menu.Item>
@@ -44,8 +51,8 @@ class App extends Component {
               <Route path="/" render={() => <Home style={contentStyles}/>} /> 
             </Switch>
 
-            <Segment inverted color='black'>
-            
+            <Segment inverted padded='very' color='black'>
+
             </Segment>
           </div>
           
