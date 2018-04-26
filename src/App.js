@@ -96,6 +96,13 @@ class App extends Component {
                 inverted
                 size='huge'/>
             </a>
+            <a href='/assets/EverettAbbott.pdf' download>
+              <Icon 
+                name='file text'
+                color='grey'
+                inverted
+                size='huge'/>
+            </a>
           </Segment>
         </div>
     );
